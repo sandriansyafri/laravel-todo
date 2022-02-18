@@ -25,7 +25,7 @@ class RegisterController extends Controller
         $data = $request->only('name', 'email', 'password');
         $data['password'] = Hash::make($request->password);
 
-        // User::create($data);
+        User::create($data);
         return back()->with('register_success', 'Register Success');
     }
 }
